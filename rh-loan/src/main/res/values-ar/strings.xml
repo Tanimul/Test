@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">Ratehammer</string>
+    <string name="title">عنوان</string>
+
+
+    <!--Into Fragment values-->
+    <string name="sar">سار</string>
+
+
+    <string name="label_apr">أبريل</string>
+
+    <string name="months">شهور</string>
+
+    <string name="label_loading">تحميل ..</string>
+    <string name="choose_your_loan">اختر القرض الخاص بك</string>
+    <string name="_00">00</string>
+    <string name="choose_loan_term">اختر مدة القرض</string>
+    <string name="choose_loan_purpose">اختر غرض القرض</string>
+    <string name="how_to_use">كيف تستعمل</string>
+    <string name="to_begin_simply_customise_the_slider">للبدء، ما عليك سوى تخصيص شريط التمرير للتكيف مع شروط إعادة الدفع والمبلغ الأكثر ملاءمة لك</string>
+    <string name="new_lender_quote">عرض أسعار جديد للمقرض</string>
+    <string name="loan_amount">مبلغ القرض</string>
+    <string name="loan_term">فترة قرض</string>
+    <string name="total_repayable">إجمالي مستحق السداد</string>
+    <string name="lowest">أدنى</string>
+    <string name="tap_see_lender_details">اضغط على رؤية تفاصيل المُقرضs</string>
+    <string name="monthly_payment">الدفع الشهري</string>
+    <string name="likely_apr">من المحتمل أبريل</string>
+    <string name="_percent">%</string>
+    <string name="recommended">مُستَحسَن</string>
+    <string name="_3">3</string>
+    <string name="_60">60</string>
+    <string name="based_on_lowest_monthly_payment">على أساس أقل دفعة شهرية</string>
+    <string name="total_cost_of_credit">التكلفة الإجمالية للائتمان</string>
+    <string name="admin_fee">رسوم المشرف</string>
+    <string name="offer_status">حالة العرض</string>
+    <string name="choose_this_lender">اختر هذا المُقرض</string>
+    <string name="scroll_to_see_all_results">قم بالتمرير لرؤية كافة النتائج</string>
+    <string name="green_bulbs_mean_they_are_eligible_lenders_flashing_green_mean_they_are_likely_to_meet_your_offer">المصابيح الخضراء تعني أنهم مُقرضون مؤهلون، والوميض باللون الأخضر يعني أنه من المحتمل أن يلبيوا عرضك</string>
+    <string name="loan_details">تفاصيل القرض</string>
+    <string name="i_m_ready">أنا مستعد</string>
+    <string name="sar_for_months">%1$s ريال سعودي لمدة %2$s شهر</string>
+    <string name="likely_offer">العرض المحتمل</string>
+    <string name="essential_information_for_lenders">معلومات إحصائية للمقرضين</string>
+    <string name="ensure_accurate_and_truthful_information">ضمان معلومات دقيقة وصادقة لعملية طلب القرض على نحو سلس.</string>
+    <string name="step_0_0">الخطوة 0/0:</string>
+    <string name="step_1_3">الخطوة 1/3:</string>
+    <string name="step_2_3">الخطوة 2/3:</string>
+    <string name="step_3_3">الخطوة 3/3:</string>
+
+    <string name="lender_required">الممرات المطلوبة</string>
+    <string name="pep_information">معلومات بيب</string>
+    <string name="do_you_have_a_relationship_to_a_pep_individual">هل لديك علاقة بشخص مكشوف سياسيًا (PEP)؟</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="is_any_relatives_known_as_pep">هل يُعرف أي من الأقارب (الدرجة الأولى والثانية) بـ PEP؟</string>
+    <string name="have_you_held_any_political_position">هل شغلت أي منصب سياسي خلال السنوات العشر الماضية؟</string>
+
+    <string name="proceed_next">تابع بعد ذلك</string>
+    <string name="enter_the_position">أدخل الموقف</string>
+    <string name="family_breadwinner">هل أنت معيل الأسرة؟</string>
+    <string name="please_specify_the_position">يرجى تحديد الموقف</string>
+    <string name="_0">0</string>
+    <string name="number_dependents_private_school">عدد المعالين في المدارس الخاصة</string>
+    <string name="number_dependents_public_school">عدد المعالين في المدارس العامة</string>
+    <string name="number_of_children">عدد الاطفال</string>
+    <string name="number_of_domestic_workers">عدد العمالة المنزلية</string>
+    <string name="house_type">نوع المنزل</string>
+    <string name="owned">مملوكة</string>
+    <string name="rental">تأجير</string>
+    <string name="company_provided">الشركة المقدمة</string>
+    <string name="residential_type">نوع سكني</string>
+    <string name="duplex">دوبلكس</string>
+    <string name="villa">فيلا</string>
+    <string name="apartment">شقة</string>
+    <string name="family_residence_information">معلومات الأسرة والإقامة</string>
+    <string name="bank_account">حساب البنك</string>
+    <string name="select_your_preferred_bank">اختر البنك المفضل لديك</string>
+    <string name="as_per_sama_s_registration">وفقاً للتسجيل لدى مؤسسة النقد العربي السعودي، يُسمح لك فقط بتحويل الأموال إلى حسابك البنكي الخاص</string>
+    <string name="select_bank">حدد البنك</string>
+    <string name="submit">يُقدِّم</string>
+    <string name="account_info">معلومات الحساب</string>
+    <string name="accountHolderName">اسم صاحب الحساب</string>
+    <string name="swift_bic">التحويلة البنكية الرمز البنكي</string>
+    <string name="iban_number">رقم الآيبان</string>
+    <string name="make_default_account">جعل الحساب الافتراضي</string>
+    <string name="note_only_transfers">ملاحظة: يتم قبول التحويلات إلى الحسابات المصرفية فقط، حيث لا يتم قبول المحافظ الرقمية</string>
+    <string name="enter_code">ادخل الرمز</string>
+    <string name="verification">ادخل الرمز</string>
+    <string name="resent_time_count">00:00</string>
+    <string name="confirm_code">تأكيد الرمز</string>
+    <string name="request_code_again_in">اطلب الرمز مرة أخرى</string>
+    <string name="request_code_again">اطلب الرمز مرة أخرى</string>
+    <string name="enter_the_6_digit_code_sent_via_sms">أدخل الرمز المكون من 6 أرقام المرسل عبر رسالة نصية قصيرة إلى رقم هاتفك المحمول</string>
+</resources>

@@ -1,0 +1,68 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="bd.com.media365.ratehammer_sdk.models.banks.response.Data" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_bank"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_image_background"
+            app:imageUrl="@{data.logo.src}"
+            android:padding="@dimen/padding_size_4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_bankName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_size_16dp"
+            android:fontFamily="@font/century_gothic"
+            android:lineSpacingExtra="@dimen/line_spacing_size_4dp"
+            android:text="@{data.name}"
+            android:textAllCaps="false"
+            android:textColor="@color/color_FF000000"
+            android:textSize="@dimen/text_size_14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ib_next"
+            app:layout_constraintStart_toEndOf="@id/iv_bank"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/title" />
+
+
+        <ImageButton
+            android:id="@+id/ib_next"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginVertical="@dimen/margin_size_12dp"
+            android:background="@null"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_size_24dp"
+            android:background="@color/color_F1F5F9"
+            app:layout_constraintTop_toBottomOf="@id/ib_next" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

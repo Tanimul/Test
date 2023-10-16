@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vLender"
+            type="bd.com.media365.ratehammer_sdk.models.applications_store.response.Lender" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_size_12dp"
+            android:backgroundTint="@color/color_FFFFFFFF"
+            app:cardCornerRadius="@dimen/corner_radius_size_12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/color_FF1D25">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_size_16dp">
+
+                <ImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo_placeholder"
+                    app:imageUrl="@{vLender.logo.src}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_select"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_radio_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <include
+                    android:id="@+id/pb_totalPayable"
+                    layout="@layout/item_sdk_progress_lender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+                <include
+                    android:id="@+id/pb_monthlyPayment"
+                    layout="@layout/item_sdk_progress_lender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pb_totalPayable" />
+
+                <include
+                    android:id="@+id/pb_likelyApr"
+                    layout="@layout/item_sdk_progress_lender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pb_monthlyPayment" />
+
+                <View
+                    android:id="@+id/view_horizontalDashedLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/margin_size_16dp"
+                    android:background="@drawable/horizontal_dashed_line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pb_likelyApr" />
+
+                <TextView
+                    android:id="@+id/tv_tapForDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    android:drawableEnd="@drawable/ic_arrow_right"
+                    android:drawablePadding="@dimen/padding_size_4dp"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/line_spacing_size_16dp"
+                    android:paddingHorizontal="@dimen/padding_size_56dp"
+                    android:text="@string/tap_see_lender_details"
+                    android:textColor="@color/color_0F172A"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_horizontalDashedLine" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_recommended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_size_32dp"
+            android:background="@drawable/background_textview_red"
+            android:clipToPadding="false"
+            android:fontFamily="@font/century_gothic"
+            android:gravity="start"
+            android:paddingHorizontal="@dimen/padding_size_6dp"
+            android:paddingVertical="@dimen/padding_size_2dp"
+            android:text="@string/recommended"
+            android:textColor="@color/color_FFFFFFFF"
+            android:textSize="@dimen/text_size_10sp"
+            app:layout_constraintBottom_toTopOf="@id/cardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cardView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

@@ -1,0 +1,99 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="infoTitle"
+            type="String" />
+
+        <variable
+            name="buttonYesTitle"
+            type="String" />
+
+        <variable
+            name="buttonNoTitle"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tv_doYouHaveARelationshipToAPepIndividual"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_size_16dp"
+            android:fontFamily="@font/century_gothic"
+            android:lineSpacingExtra="@dimen/line_spacing_size_4dp"
+            android:text="@{infoTitle}"
+            android:textAllCaps="false"
+            android:textColor="@color/color_FF000000"
+            android:textSize="@dimen/text_size_14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/radio_groupChoosing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/title" />
+
+        <RadioGroup
+            android:id="@+id/radio_groupChoosing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/btn_yes"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="@dimen/margin_size_8dp"
+                android:layout_weight="1"
+                android:background="@drawable/yes_stroke"
+                android:button="@null"
+                android:fontFamily="@font/century_gothic_bold"
+                android:gravity="center"
+                android:text="@{buttonYesTitle}"
+                android:textAllCaps="false"
+                android:textColor="@color/color_020617"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_no"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/btn_no"
+                android:layout_width="54dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="@drawable/no_stroke"
+                android:button="@null"
+                android:fontFamily="@font/century_gothic_bold"
+                android:gravity="center"
+                android:text="@{buttonNoTitle}"
+                android:textAllCaps="false"
+                android:textColor="@color/color_020617"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/no" />
+        </RadioGroup>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_size_24dp"
+            android:background="@color/color_F1F5F9"
+            app:layout_constraintTop_toBottomOf="@id/radio_groupChoosing" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

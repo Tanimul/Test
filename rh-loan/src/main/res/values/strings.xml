@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">RateHammer</string>
+    <string name="title">Title</string>
+
+
+    <!--Into Fragment values-->
+    <string name="sar">SAR</string>
+
+
+    <string name="label_apr">Apr</string>
+
+    <string name="months">Months</string>
+
+    <string name="label_loading">Loading .. </string>
+    <string name="choose_your_loan">Choose your loan</string>
+    <string name="_00">00</string>
+    <string name="choose_loan_term">Choose loan term</string>
+    <string name="choose_loan_purpose">Choose loan purpose</string>
+    <string name="how_to_use">How to use</string>
+    <string name="to_begin_simply_customise_the_slider">To begin, simply customise the slider to adjust to the re-payment terms and amount most suitable to you</string>
+    <string name="new_lender_quote">NEW LENDER QUOTE</string>
+    <string name="loan_amount">Loan Amount</string>
+    <string name="loan_term">Loan Term</string>
+    <string name="total_repayable">Total Repayable</string>
+    <string name="lowest">Lowest</string>
+    <string name="tap_see_lender_details">Tap see lender details</string>
+    <string name="monthly_payment">Monthly payment</string>
+    <string name="likely_apr">Likely apr</string>
+    <string name="_percent">%</string>
+    <string name="recommended">Recommended</string>
+    <string name="_3">3</string>
+    <string name="_60">60</string>
+    <string name="based_on_lowest_monthly_payment">Based on lowest monthly payment</string>
+    <string name="total_cost_of_credit">Total cost of credit</string>
+    <string name="admin_fee">Admin fee</string>
+    <string name="offer_status">Offer status</string>
+    <string name="choose_this_lender">CHOOSE THIS LENDER</string>
+    <string name="scroll_to_see_all_results">Scroll to see all results</string>
+    <string name="green_bulbs_mean_they_are_eligible_lenders_flashing_green_mean_they_are_likely_to_meet_your_offer">Green bulbs mean they are eligible lenders, flashing green mean they are likely to meet your offer</string>
+    <string name="loan_details">Loan Details</string>
+    <string name="i_m_ready">I\'m ready</string>
+    <string name="sar_for_months">"%1$s SAR for %2$s Months "</string>
+    <string name="likely_offer">Likely offer</string>
+    <string name="essential_information_for_lenders">Essential Information for Lenders</string>
+    <string name="ensure_accurate_and_truthful_information">Ensure Accurate and Truthful Information for a Smooth Loan Approval Process.</string>
+    <string name="step_0_0">Step 0/0:</string>
+    <string name="step_1_3">Step 1/3:</string>
+    <string name="step_2_3">Step 2/3:</string>
+    <string name="step_3_3">Step 3/3:</string>
+
+    <string name="lender_required">lender required</string>
+    <string name="pep_information">PEP Information</string>
+    <string name="do_you_have_a_relationship_to_a_pep_individual">Do you have a relationship to a politically exposed person (PEP) individual?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="is_any_relatives_known_as_pep">Is any relatives (first and second degree) known as PEP?</string>
+    <string name="have_you_held_any_political_position">Have you held any political position in the last 10 years?</string>
+
+    <string name="proceed_next">Proceed next</string>
+    <string name="enter_the_position">Enter the position</string>
+    <string name="family_breadwinner">Are you the family breadwinner?</string>
+    <string name="please_specify_the_position">Please specify the position</string>
+    <string name="_0">0</string>
+    <string name="number_dependents_private_school">Number of dependents in private school</string>
+    <string name="number_dependents_public_school">Number of dependents in public school</string>
+    <string name="number_of_children">Number of children</string>
+    <string name="number_of_domestic_workers">Number of domestic workers</string>
+    <string name="house_type">House type</string>
+    <string name="owned">Owned</string>
+    <string name="rental">Rental</string>
+    <string name="company_provided">Company Provided</string>
+    <string name="residential_type">Residential Type</string>
+    <string name="duplex">Duplex</string>
+    <string name="villa">Villa</string>
+    <string name="apartment">Apartment</string>
+    <string name="family_residence_information"><![CDATA[Family & Residence Information]]></string>
+    <string name="bank_account">Bank Account</string>
+    <string name="select_your_preferred_bank">Select your preferred bank</string>
+    <string name="as_per_sama_s_registration">As per SAMA\'s registration, you are only allowed to transfer money to your own bank account</string>
+    <string name="select_bank">Select Bank</string>
+    <string name="submit">Submit</string>
+    <string name="account_info">Account Info</string>
+    <string name="accountHolderName">Account Holder Name</string>
+    <string name="swift_bic">SWIFT/BIC</string>
+    <string name="iban_number">IBAN Number</string>
+    <string name="make_default_account">Make Default Account</string>
+    <string name="note_only_transfers">Note: Only transfers to bank accounts are accepted, as digital wallets are not accepted</string>
+    <string name="enter_code">Enter Code</string>
+    <string name="verification">Verification</string>
+    <string name="resent_time_count">00:00</string>
+    <string name="confirm_code">Confirm Code</string>
+    <string name="request_code_again_in">Request code again in</string>
+    <string name="request_code_again">Request code again</string>
+    <string name="enter_the_6_digit_code_sent_via_sms">Enter the 6-digit code sent via SMS to your mobile number </string>
+</resources>

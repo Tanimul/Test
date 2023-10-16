@@ -1,0 +1,63 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <!--Appbar Height-->
+
+    <!-- Text Size-->
+    <dimen name="text_size_10sp">10sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_22sp">22sp</dimen>
+    <dimen name="text_size_24sp">24sp</dimen>
+
+
+    <!--ProgressBar Height-->
+    <dimen name="progress_bar_height_8dp">8dp</dimen>
+
+    <!--RecyclerView Height-->
+    <dimen name="recycler_view_height_0dp">0dp</dimen>
+
+
+    <!--    spinner height-->
+
+
+    <!--Margin-->
+    <dimen name="margin_size_2dp">2dp</dimen>
+    <dimen name="margin_size_4dp">4dp</dimen>
+    <dimen name="margin_size_6dp">6dp</dimen>
+    <dimen name="margin_size_8dp">8dp</dimen>
+    <dimen name="margin_size_10dp">10dp</dimen>
+    <dimen name="margin_size_12dp">12dp</dimen>
+    <dimen name="margin_size_16dp">16dp</dimen>
+    <dimen name="margin_size_20dp">20dp</dimen>
+    <dimen name="margin_size_24dp">24dp</dimen>
+    <dimen name="margin_size_32dp">32dp</dimen>
+    <dimen name="margin_size_44dp">44dp</dimen>
+
+
+    <!--Padding-->
+    <dimen name="padding_size_2dp">2dp</dimen>
+    <dimen name="padding_size_4dp">4dp</dimen>
+    <dimen name="padding_size_6dp">6dp</dimen>
+    <dimen name="padding_size_8dp">8dp</dimen>
+    <dimen name="padding_size_10dp">10dp</dimen>
+    <dimen name="padding_size_12dp">12dp</dimen>
+    <dimen name="padding_size_16dp">16dp</dimen>
+    <dimen name="padding_size_24dp">24dp</dimen>
+    <dimen name="padding_size_44dp">44dp</dimen>
+    <dimen name="padding_size_56dp">56dp</dimen>
+
+    <!--Radius-->
+    <dimen name="corner_radius_size_10dp">10dp</dimen>
+    <dimen name="corner_radius_size_12dp">12dp</dimen>
+    <dimen name="corner_radius_size_16dp">16dp</dimen>
+    <dimen name="corner_radius_size_24dp">24dp</dimen>
+
+    <!--LineSpacingExtra-->
+    <dimen name="line_spacing_size_4dp">4dp</dimen>
+    <dimen name="line_spacing_size_8dp">8dp</dimen>
+    <dimen name="line_spacing_size_16dp">16dp</dimen>
+
+</resources>

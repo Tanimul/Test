@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="bd.com.media365.ratehammer_sdk.ui.fragments.loan.lender_required.bank_account.bank_verification.BankOtpViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_FFFFFFFF"
+        tools:context=".ui.fragments.loan.lender_required.bank_account.bank_verification.BankVerificationFragment">
+
+        <include
+            app:customToolbarTitle="@{viewModel.title}"
+            android:id="@+id/layout_customToolbar"
+            layout="@layout/layout_sdk_toolbar" />
+
+        <TextView
+            android:id="@+id/tv_enterCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_size_32dp"
+            android:layout_marginTop="@dimen/margin_size_16dp"
+            android:fontFamily="@font/ltc_globe_gothic_bold"
+            android:gravity="center"
+            android:text="@{viewModel.enterCode}"
+            tools:text="@string/enter_code"
+            android:textColor="@color/color_FF000000"
+            android:textSize="@dimen/text_size_22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_customToolbar" />
+
+        <TextView
+            android:id="@+id/tv_codeDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_size_16dp"
+            android:layout_marginTop="@dimen/margin_size_16dp"
+            android:fontFamily="@font/century_gothic"
+            android:gravity="center"
+            android:text="@{(viewModel.weSentACodeToTheMobileNumber ?? ``) + ` +` + (viewModel.number ?? ``)}"
+            tools:text="@string/enter_the_6_digit_code_sent_via_sms"
+            android:textColor="@color/color_0F172A"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_enterCode" />
+
+        <com.chaos.view.PinView
+            android:id="@+id/pv_bankCode"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_size_32dp"
+            android:cursorVisible="true"
+            android:inputType="number"
+            android:textColor="@color/color_FF000000"
+            android:textSize="@dimen/text_size_16sp"
+            android:textCursorDrawable="@drawable/cursor_line"
+            app:cursorWidth="2dp"
+            app:hideLineWhenFilled="false"
+            app:itemCount="6"
+            app:itemHeight="48dp"
+            app:itemRadius="12dp"
+            app:itemSpacing="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_codeDetails"
+            app:lineColor="@color/color_cccccc"
+            app:lineWidth="1dp"
+            app:viewType="rectangle" />
+
+        <TextView
+            android:id="@+id/tv_codeDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_size_32dp"
+            android:layout_marginTop="@dimen/margin_size_16dp"
+            android:fontFamily="@font/century_gothic"
+            android:gravity="center"
+            android:textColor="@color/color_0F172A"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pv_bankCode" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_confirmCode"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="@dimen/margin_size_24dp"
+            android:layout_marginTop="@dimen/margin_size_32dp"
+            android:background="@drawable/ripple_theme_gradient_curve"
+            android:fontFamily="@font/century_gothic_bold"
+            android:text="@{viewModel.confirmCode}"
+            tools:text="@string/confirm_code"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textColor="@color/color_FFFFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_codeDemo"
+            app:rippleColor="?attr/colorControlHighlight" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_constraint01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_size_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_confirmCode">
+
+            <TextView
+                android:id="@+id/tv_requestCodeAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="@{viewModel.requestCodeAgainIn}"
+                tools:text="@string/request_code_again_in"
+                android:textColor="@color/color_334155"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_resendTimeCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_size_8dp"
+                android:gravity="center"
+                android:text="@{viewModel.resentTimeCount}"
+                tools:text="@string/resent_time_count"
+                android:textColor="@color/color_0F172A"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintStart_toEndOf="@id/tv_requestCodeAgain"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

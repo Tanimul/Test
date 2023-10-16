@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="selectedBank"
+            type="bd.com.media365.ratehammer_sdk.models.banks.response.Data" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_size_24dp"
+            android:paddingVertical="@dimen/padding_size_8dp">
+
+            <ImageView
+                android:id="@+id/iv_bank"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:padding="@dimen/padding_size_4dp"
+                app:imageUrl="@{selectedBank.logo.src}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_bankName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_size_16dp"
+                android:fontFamily="@font/ltc_globe_gothic_bold"
+                android:lineSpacingExtra="@dimen/line_spacing_size_4dp"
+                android:text="@{selectedBank.name}"
+                android:textAllCaps="false"
+                android:textColor="@color/color_FF000000"
+                android:textSize="@dimen/text_size_14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ib_swap"
+                app:layout_constraintStart_toEndOf="@id/iv_bank"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/title" />
+
+
+            <ImageButton
+                android:id="@+id/ib_swap"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginVertical="@dimen/margin_size_12dp"
+                android:background="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_arrow_swap"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

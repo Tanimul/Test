@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flow_nav_graph_loan"
+    app:startDestination="@id/newLoanFragment">
+
+    <fragment
+        android:id="@+id/newLoanFragment"
+        android:name="bd.com.media365.ratehammer_sdk.ui.fragments.loan.new_loan.NewLoanFragment"
+        android:label="fragment_new_loan"
+        tools:layout="@layout/fragment_sdk_new_loan">
+        <action
+            android:id="@+id/action_newLoanFragment_to_loanDetailsFragment"
+            app:destination="@id/loanDetailsFragment" />
+        <action
+            android:id="@+id/action_newLoanFragment_to_PEPFragmentSdk"
+            app:destination="@id/PEPFragmentSdk" />
+    </fragment>
+    <fragment
+        android:id="@+id/loanDetailsFragment"
+        android:name="bd.com.media365.ratehammer_sdk.ui.fragments.loan.loan_details.LoanDetailsFragment"
+        android:label="fragment_loan_details"
+        tools:layout="@layout/fragment_sdk_loan_details" >
+
+        <action
+            android:id="@+id/action_loanDetailsFragmentSdk_to_PEPFragmentSdk"
+            app:destination="@id/PEPFragmentSdk" />
+    </fragment>
+    <fragment
+        android:id="@+id/PEPFragmentSdk"
+        android:name="bd.com.media365.ratehammer_sdk.ui.fragments.loan.lender_required.pep.PEPFragment"
+        android:label="PEPFragmentSdk" >
+        <action
+            android:id="@+id/action_PEPFragmentSdk_to_familyResidenceFragmentSdk"
+            app:destination="@id/familyResidenceFragmentSdk" />
+    </fragment>
+    <fragment
+        android:id="@+id/familyResidenceFragmentSdk"
+        android:name="bd.com.media365.ratehammer_sdk.ui.fragments.loan.lender_required.family_residence.FamilyResidenceFragment"
+        android:label="FamilyResidenceFragmentSdk" >
+        <action
+            android:id="@+id/action_familyResidenceFragmentSdk_to_bankAccountFragmentSdk"
+            app:destination="@id/bankAccountFragmentSdk" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankAccountFragmentSdk"
+        android:name="bd.com.media365.ratehammer_sdk.ui.fragments.loan.lender_required.bank_account.BankAccountFragment"
+        android:label="BankAccountFragmentSdk" >
+        <action
+            android:id="@+id/action_bankAccountFragmentSdk_to_bankVerificationFragment"
+            app:destination="@id/bankVerificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankVerificationFragment"
+        android:name="bd.com.media365.ratehammer_sdk.ui.fragments.loan.lender_required.bank_account.bank_verification.BankVerificationFragment"
+        android:label="BankVerificationFragment" />
+
+
+</navigation>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="bd.com.media365.ratehammer_sdk.ui.fragments.loan.new_loan.NewLoanViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_FFFFFFFF"
+        tools:context=".ui.fragments.loan.new_loan.NewLoanFragment">
+
+        <include
+            android:id="@+id/layout_sdk_toolbar"
+            layout="@layout/layout_sdk_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:customToolbarTitle="@{viewModel.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_chooseThisLender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_sdk_toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_topBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ltc_globe_gothic_bold"
+                        android:gravity="center"
+                        android:lineSpacingExtra="@dimen/line_spacing_size_16dp"
+                        android:textColor="@color/color_FF000000"
+                        android:textSize="@dimen/text_size_24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatSeekBar
+                        android:id="@+id/sb_loanAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                        android:layout_marginTop="@dimen/margin_size_24dp"
+                        android:maxHeight="8dp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:progressDrawable="@drawable/seekbar_progress_style"
+                        android:thumb="@drawable/seekbar_thumb"
+                        android:thumbOffset="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_heading" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_minLoanAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                        android:layout_marginTop="@dimen/margin_size_10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sb_loanAmount">
+
+                        <TextView
+                            android:id="@+id/tv_minLoanAmountValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/century_gothic"
+                            android:letterSpacing="0.1"
+                            android:text="@string/_00"
+                            android:textColor="@color/color_FF000000"
+                            android:textSize="@dimen/text_size_12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_minLoanAmountSar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_size_2dp"
+                            android:fontFamily="@font/century_gothic"
+                            android:text="@string/sar"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_64748B"
+                            android:textSize="@dimen/text_size_10sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_minLoanAmountValue"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tv_loanAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_size_10dp"
+                        android:fontFamily="@font/century_gothic"
+                        android:letterSpacing="0.1"
+                        android:text="@string/loan_amount"
+                        android:textColor="@color/color_FF000000"
+                        android:textSize="@dimen/text_size_12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/layout_maxLoanAmount"
+                        app:layout_constraintStart_toEndOf="@id/layout_minLoanAmount"
+                        app:layout_constraintTop_toBottomOf="@id/sb_loanAmount" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_maxLoanAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                        android:layout_marginTop="@dimen/margin_size_10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sb_loanAmount">
+
+                        <TextView
+                            android:id="@+id/tv_maxLoanAmountValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_size_2dp"
+                            android:fontFamily="@font/century_gothic"
+                            android:letterSpacing="0.1"
+                            android:lineSpacingExtra="@dimen/line_spacing_size_16dp"
+                            android:text="@string/_00"
+                            android:textColor="@color/color_FF000000"
+                            android:textSize="@dimen/text_size_12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/tv_maxLoanAmountSar"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_maxLoanAmountSar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/century_gothic"
+                            android:text="@string/sar"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_64748B"
+                            android:textSize="@dimen/text_size_10sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatSeekBar
+                        android:id="@+id/sb_loanTerms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                        android:layout_marginTop="@dimen/margin_size_32dp"
+                        android:max="60"
+                        android:maxHeight="8dp"
+                        android:min="3"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:progressDrawable="@drawable/seekbar_progress_style"
+                        android:thumb="@drawable/seekbar_thumb"
+                        android:thumbOffset="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_loanAmount" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_minLoanTerms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                        android:layout_marginTop="@dimen/margin_size_10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sb_loanTerms">
+
+                        <TextView
+                            android:id="@+id/tv_minLoanTermsValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/century_gothic"
+                            android:letterSpacing="0.1"
+                            android:text="@string/_3"
+                            android:textColor="@color/color_FF000000"
+                            android:textSize="@dimen/text_size_12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_minLoanTermsMonths"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_size_2dp"
+                            android:fontFamily="@font/century_gothic"
+                            android:text="@string/months"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_64748B"
+                            android:textSize="@dimen/text_size_10sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_minLoanTermsValue"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tv_loanTerms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_size_10dp"
+                        android:fontFamily="@font/century_gothic"
+                        android:letterSpacing="0.1"
+                        android:text="@string/loan_term"
+                        android:textColor="@color/color_FF000000"
+                        android:textSize="@dimen/text_size_12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/layout_maxLoanTerms"
+                        app:layout_constraintStart_toEndOf="@id/layout_minLoanTerms"
+                        app:layout_constraintTop_toBottomOf="@id/sb_loanTerms" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_maxLoanTerms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                        android:layout_marginTop="@dimen/margin_size_10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sb_loanTerms">
+
+                        <TextView
+                            android:id="@+id/tv_maxLoanTermsValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_size_2dp"
+                            android:fontFamily="@font/century_gothic"
+                            android:letterSpacing="0.1"
+                            android:lineSpacingExtra="@dimen/line_spacing_size_16dp"
+                            android:text="@string/_60"
+                            android:textColor="@color/color_FF000000"
+                            android:textSize="@dimen/text_size_12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/tv_maxLoanTermsMonths"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_maxLoanTermsMonths"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/century_gothic"
+                            android:text="@string/months"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_64748B"
+                            android:textSize="@dimen/text_size_10sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/gif_universe"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin_size_8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/univerese_loader"
+                    android:visibility="invisible"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_topBar" />
+
+                <FrameLayout
+                    android:id="@+id/fl_radder"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_topBar" />
+
+                <LinearLayout
+                    android:id="@+id/layout_scroll"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fl_radder">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottie_arrowDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:rotation="-90"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="arrow_down.json"
+                        app:lottie_loop="true" />
+
+                    <TextView
+                        android:id="@+id/tv_scrollSeeResults"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/century_gothic_bold"
+                        android:paddingStart="@dimen/padding_size_16dp"
+                        android:text="@string/scroll_to_see_all_results"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_475569"
+                        android:textSize="@dimen/text_size_14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="center"
+                    android:text="@string/green_bulbs_mean_they_are_eligible_lenders_flashing_green_mean_they_are_likely_to_meet_your_offer"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_94A3B8"
+                    android:textSize="@dimen/text_size_12sp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_scroll" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_offer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_32dp"
+                    android:paddingBottom="@dimen/padding_size_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_description"
+                    tools:listitem="@layout/item_sdk_offer" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_chooseThisLender"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="@dimen/margin_size_24dp"
+            android:layout_marginBottom="@dimen/margin_size_8dp"
+            android:background="@drawable/ripple_theme_gradient_curve"
+            android:fontFamily="@font/century_gothic_bold"
+            android:gravity="center"
+            android:text="@string/choose_this_lender"
+            android:textAllCaps="true"
+            android:textColor="@color/color_FFFFFFFF"
+            android:visibility="invisible"
+            app:backgroundTint="@null"
+            app:icon="@drawable/ic_arrow_forward"
+            app:iconGravity="textEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:rippleColor="?attr/colorControlHighlight" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

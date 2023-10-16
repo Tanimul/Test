@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guideline01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/century_gothic"
+                android:gravity="start"
+                android:textAllCaps="true"
+                android:textColor="@color/color_FF000000"
+                android:textSize="@dimen/text_size_10sp"
+                app:layout_constraintEnd_toStartOf="@+id/tv_lowest"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/title" />
+
+            <TextView
+                android:id="@+id/tv_lowest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_textview_blue"
+                android:fontFamily="@font/century_gothic"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/padding_size_6dp"
+                android:paddingVertical="@dimen/padding_size_2dp"
+                android:textAllCaps="true"
+                android:textColor="@color/color_FFFFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toStartOf="@id/divider"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/lowest" />
+
+            <include
+                android:id="@+id/pb_total"
+                layout="@layout/layout_sdk_progressbar"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/progress_bar_height_8dp"
+                android:layout_marginTop="@dimen/padding_size_4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/divider"
+                app:layout_constraintTop_toBottomOf="@id/tv_lowest" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.70" />
+
+            <TextView
+                android:id="@+id/tv_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/century_gothic_bold"
+                android:gravity="bottom|end"
+                android:letterSpacing="0.1"
+                android:lineSpacingExtra="@dimen/line_spacing_size_16dp"
+                android:textColor="@color/color_FF000000"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/divider"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/_00" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

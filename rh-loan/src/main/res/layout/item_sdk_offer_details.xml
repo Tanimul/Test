@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vLender"
+            type="bd.com.media365.ratehammer_sdk.models.applications_store.response.Lender" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="590dp"
+        android:layout_margin="@dimen/margin_size_12dp"
+        app:cardCornerRadius="@dimen/corner_radius_size_12dp"
+        app:cardElevation="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/padding_size_16dp"
+            android:paddingTop="@dimen/padding_size_16dp"
+            android:paddingBottom="@dimen/padding_size_24dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_recommended"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_recommended"
+                android:paddingHorizontal="@dimen/padding_size_12dp"
+                android:paddingVertical="@dimen/padding_size_4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_recommended"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_recomended_badge"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_recommended"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_size_8dp"
+                    android:clipToPadding="false"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="start"
+                    android:text="@string/recommended"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_recommended"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_basedLowestMonthlyPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_size_8dp"
+                    android:clipToPadding="false"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="start"
+                    android:text="@string/based_on_lowest_monthly_payment"
+                    android:textColor="@color/color_F80000"
+                    android:textSize="@dimen/text_size_10sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_recommended"
+                    app:layout_constraintTop_toBottomOf="@id/tv_recommended" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin_size_8dp"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{vLender.logo.src}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_recommended" />
+
+            <TextView
+                android:id="@+id/tv_lenderName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ltc_globe_gothic_bold"
+                android:gravity="start"
+                android:paddingStart="@dimen/padding_size_10dp"
+                android:lineSpacingExtra="@dimen/line_spacing_size_16dp"
+                android:textColor="@color/color_FF000000"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold"
+                tools:text="@string/app_name"
+                android:text="@{vLender.name}"
+                app:layout_constraintBottom_toTopOf="@+id/pb_totalPayable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_logo"
+                app:layout_constraintTop_toBottomOf="@id/layout_recommended" />
+            <include
+                android:id="@+id/pb_totalPayable"
+                layout="@layout/item_sdk_progress_lender_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+            <include
+                android:id="@+id/pb_monthlyPayment"
+                layout="@layout/item_sdk_progress_lender_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pb_totalPayable" />
+
+            <include
+                android:id="@+id/pb_likelyApr"
+                layout="@layout/item_sdk_progress_lender_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pb_monthlyPayment" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pb_likelyApr">
+
+                <TextView
+                    android:id="@+id/tv_loanAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="start"
+                    android:text="@string/loan_amount"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_loanAmountValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="start"
+                    android:letterSpacing="0.1"
+                    android:text="@string/loan_amount"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_loanAmount" />
+
+                <TextView
+                    android:id="@+id/tv_totalRepayable"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_20dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="start"
+                    android:text="@string/total_repayable"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_loanAmountValue" />
+
+                <TextView
+                    android:id="@+id/tv_totalRepayableValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="start"
+                    android:letterSpacing="0.1"
+                    android:text="@string/total_repayable"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_totalRepayable" />
+
+                <TextView
+                    android:id="@+id/tv_apr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_20dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="start"
+                    android:text="@string/label_apr"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_totalRepayableValue" />
+
+                <TextView
+                    android:id="@+id/tv_aprValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="start"
+                    android:text="@string/label_apr"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_apr" />
+
+                <TextView
+                    android:id="@+id/tv_totalCostCredit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_20dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="start"
+                    android:text="@string/total_cost_of_credit"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_aprValue" />
+
+                <TextView
+                    android:id="@+id/tv_totalCostCreditValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="start"
+                    android:letterSpacing="0.1"
+                    android:text="@string/total_cost_of_credit"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline01"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_totalCostCredit" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                    android:id="@+id/tv_loanTerm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="start"
+                    android:text="@string/loan_term"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline01"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_loanTermValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="start"
+                    android:text="@string/loan_term"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline01"
+                    app:layout_constraintTop_toBottomOf="@id/tv_loanAmount" />
+
+                <TextView
+                    android:id="@+id/tv_monthlyPayment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_20dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="start"
+                    android:text="@string/monthly_payment"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline01"
+                    app:layout_constraintTop_toBottomOf="@id/tv_loanAmountValue" />
+
+                <TextView
+                    android:id="@+id/tv_monthlyPaymentValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="start"
+                    android:letterSpacing="0.1"
+                    android:text="@string/monthly_payment"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline01"
+                    app:layout_constraintTop_toBottomOf="@id/tv_monthlyPayment" />
+
+                <TextView
+                    android:id="@+id/tv_adminFee"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_20dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="start"
+                    android:text="@string/admin_fee"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline01"
+                    app:layout_constraintTop_toBottomOf="@id/tv_monthlyPaymentValue" />
+
+                <TextView
+                    android:id="@+id/tv_adminFeeValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="start"
+                    android:letterSpacing="0.1"
+                    android:text="@string/admin_fee"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline01"
+                    app:layout_constraintTop_toBottomOf="@id/tv_adminFee" />
+
+                <TextView
+                    android:id="@+id/tv_offerStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_20dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="start"
+                    android:text="@string/offer_status"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline01"
+                    app:layout_constraintTop_toBottomOf="@id/tv_adminFeeValue" />
+
+                <TextView
+                    android:id="@+id/tv_offerStatusValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_8dp"
+                    android:layout_marginEnd="@dimen/margin_size_16dp"
+                    android:fontFamily="@font/century_gothic"
+                    android:gravity="start"
+                    android:text="@string/offer_status"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline01"
+                    app:layout_constraintTop_toBottomOf="@id/tv_offerStatus" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_chooseThisLender"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/margin_size_32dp"
+                android:background="@drawable/ripple_theme_gradient_curve"
+                android:fontFamily="@font/century_gothic_bold"
+                android:gravity="center"
+                android:text="@string/choose_this_lender"
+                android:textAllCaps="true"
+                android:textColor="@color/color_FFFFFFFF"
+                app:backgroundTint="@null"
+                app:icon="@drawable/ic_arrow_forward"
+                app:iconGravity="textEnd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:rippleColor="?attr/colorControlHighlight" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
+

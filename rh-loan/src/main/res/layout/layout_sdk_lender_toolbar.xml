@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="lenderRequiredViewModel"
+            type="bd.com.media365.ratehammer_sdk.common.viewmodels.LenderRequiredViewModel" />
+
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/corner_radius_size_24dp"
+        app:cardElevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_size_12dp">
+
+            <include
+                android:id="@+id/layout_sdk_toolbar"
+                layout="@layout/layout_sdk_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:customToolbarTitle="@{lenderRequiredViewModel.title}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin_size_8dp"
+                android:paddingHorizontal="@dimen/padding_size_24dp"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{lenderRequiredViewModel.logo}"
+                tools:src="@drawable/logo_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_sdk_toolbar" />
+
+            <TextView
+                android:id="@+id/tv_essentialInformation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_8dp"
+                android:fontFamily="@font/ltc_globe_gothic_bold"
+                android:gravity="start"
+                android:lineSpacingExtra="@dimen/line_spacing_size_8dp"
+                android:paddingHorizontal="@dimen/padding_size_24dp"
+                android:textColor="@color/color_020617"
+                android:textSize="@dimen/text_size_24sp"
+                android:textStyle="bold"
+                android:text="@{lenderRequiredViewModel.essentialInformationForLenders}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo"
+                tools:text="@string/essential_information_for_lenders" />
+
+            <TextView
+                android:id="@+id/tv_ensureAccurateAndTruthfulInformation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/century_gothic"
+                android:gravity="start"
+                android:lineSpacingExtra="@dimen/line_spacing_size_4dp"
+                android:paddingHorizontal="@dimen/padding_size_24dp"
+                android:textColor="@color/color_334155"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_essentialInformation"
+                android:text="@{lenderRequiredViewModel.ensureAccurateAndTruthfulInformation}"
+                tools:text="@string/ensure_accurate_and_truthful_information" />
+
+            <LinearLayout
+                android:id="@+id/layout_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                android:layout_marginTop="@dimen/margin_size_8dp"
+                android:weightSum="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_ensureAccurateAndTruthfulInformation">
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:background="@{lenderRequiredViewModel.view01}" />
+
+                <View
+                    android:id="@+id/view02"
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_marginHorizontal="@dimen/margin_size_8dp"
+                    android:layout_weight="1"
+                    android:background="@{lenderRequiredViewModel.view02}"/>
+
+                <View
+                    android:id="@+id/view03"
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:background="@{lenderRequiredViewModel.view03}" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_size_24dp"
+                android:layout_marginTop="@dimen/margin_size_4dp"
+                android:fontFamily="@font/century_gothic"
+                android:gravity="start"
+                android:lineSpacingExtra="@dimen/line_spacing_size_4dp"
+                android:textColor="@color/color_020617"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_tab"
+                android:text="@{lenderRequiredViewModel.step}"
+                tools:text="@string/step_0_0" />
+
+            <TextView
+                android:id="@+id/tv_stepTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_size_8dp"
+                android:layout_marginTop="@dimen/margin_size_4dp"
+                android:fontFamily="@font/century_gothic_bold"
+                android:gravity="start"
+                android:lineSpacingExtra="@dimen/line_spacing_size_4dp"
+                android:textColor="@color/color_020617"
+                android:textSize="@dimen/text_size_12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/tv_step"
+                app:layout_constraintTop_toBottomOf="@id/layout_tab"
+                android:text="@{lenderRequiredViewModel.stepTitle}"
+                tools:text="@string/title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

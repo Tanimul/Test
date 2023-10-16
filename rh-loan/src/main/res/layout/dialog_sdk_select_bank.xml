@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+
+                <variable
+                    name="viewModel"
+                    type="bd.com.media365.ratehammer_sdk.dialogs.select_bank.SelectBankViewModel" />
+        </data>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/corner_radius_size_16dp"
+            app:strokeColor="@color/color_FFFFFFFF">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="648dp"
+                    android:background="@color/color_FFFFFFFF"
+                    android:paddingHorizontal="@dimen/padding_size_24dp"
+                    android:paddingBottom="@dimen/padding_size_24dp">
+
+
+                        <TextView
+                            android:id="@+id/tv_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_size_24dp"
+                            android:fontFamily="@font/ltc_globe_gothic_bold"
+                            android:lineSpacingExtra="@dimen/line_spacing_size_16dp"
+                            android:text="@{viewModel.selectYourPreferredBank}"
+                            android:textColor="@color/color_020617"
+                            android:textSize="@dimen/text_size_22sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="@string/select_your_preferred_bank" />
+
+                        <TextView
+                            android:id="@+id/tv_description"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_size_12dp"
+                            android:fontFamily="@font/century_gothic"
+                            android:gravity="start"
+                            android:text="@{viewModel.asPerSamaRegistration}"
+                            android:textColor="@color/color_020617"
+                            android:textSize="@dimen/text_size_12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_heading"
+                            tools:text="@string/as_per_sama_s_registration" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/layout_selectBank"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_size_12dp"
+                            android:layout_marginBottom="@dimen/margin_size_4dp"
+                            app:boxBackgroundColor="@color/color_F1F5F9"
+                            app:boxCornerRadiusBottomEnd="@dimen/corner_radius_size_12dp"
+                            app:boxCornerRadiusBottomStart="@dimen/corner_radius_size_12dp"
+                            app:boxCornerRadiusTopEnd="@dimen/corner_radius_size_12dp"
+                            app:boxCornerRadiusTopStart="@dimen/corner_radius_size_12dp"
+                            app:endIconDrawable="@drawable/ic_search"
+                            app:endIconMode="custom"
+                            app:errorIconDrawable="@null"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_description"
+                            app:passwordToggleEnabled="false">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_selectBank"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/century_gothic"
+                                    android:hint="@{viewModel.selectBank}"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:textColor="@color/color_FF000000"
+                                    android:textSize="@dimen/text_size_14sp"
+                                    tools:hint="@string/select_bank" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_bankList"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/recycler_view_height_0dp"
+                            android:layout_marginTop="@dimen/margin_size_8dp"
+                            android:paddingBottom="@dimen/padding_size_8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/layout_selectBank"
+                            tools:listitem="@layout/item_sdk_bank_info" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+</layout>
+

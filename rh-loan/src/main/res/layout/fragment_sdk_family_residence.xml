@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="bd.com.media365.ratehammer_sdk.ui.fragments.loan.lender_required.family_residence.FamilyResidenceViewModel" />
+
+        <variable
+            name="lenderRequiredViewModel"
+            type="bd.com.media365.ratehammer_sdk.common.viewmodels.LenderRequiredViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.loan.lender_required.family_residence.FamilyResidenceFragment">
+
+        <include
+            android:id="@+id/layout_lenderRequiredToolbar"
+            layout="@layout/layout_sdk_lender_toolbar"
+            app:lenderRequiredViewModel="@{lenderRequiredViewModel}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <ScrollView
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_lenderRequiredToolbar">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_familyResidence"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/padding_size_44dp"
+                android:layout_marginTop="@dimen/margin_size_16dp"
+                android:layout_marginHorizontal="@dimen/margin_size_24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    android:id="@+id/layout_familyBreadWinner"
+                    layout="@layout/item_sdk_pep_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:buttonNoTitle="@{viewModel.no}"
+                    app:buttonYesTitle="@{viewModel.yes}"
+                    app:infoTitle="@{viewModel.familyBreadWinner}"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <include
+                    android:id="@+id/layout_dependentsPrivateSchool"
+                    layout="@layout/item_sdk_family_residence_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:familyResidenceTitle="@{viewModel.dependentsPrivateSchool}"
+                    app:familyResidenceValue="@{viewModel.zero}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_familyBreadWinner" />
+
+                <include
+                    android:id="@+id/layout_dependentsPublicSchool"
+                    layout="@layout/item_sdk_family_residence_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:familyResidenceTitle="@{viewModel.dependentsPublicSchool}"
+                    app:familyResidenceValue="@{viewModel.zero}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_dependentsPrivateSchool" />
+
+                <include
+                    android:id="@+id/layout_numberChildren"
+                    layout="@layout/item_sdk_family_residence_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:familyResidenceTitle="@{viewModel.numberChildren}"
+                    app:familyResidenceValue="@{viewModel.zero}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_dependentsPublicSchool" />
+
+                <include
+                    android:id="@+id/layout_numberDomesticWorker"
+                    layout="@layout/item_sdk_family_residence_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:familyResidenceTitle="@{viewModel.numberDomesticWorker}"
+                    app:familyResidenceValue="@{viewModel.zero}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_numberChildren" />
+
+                <TextView
+                    android:id="@+id/tv_houseType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_24dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:lineSpacingExtra="@dimen/line_spacing_size_4dp"
+                    android:text="@{viewModel.houseType}"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_numberDomesticWorker"
+                    tools:text="@string/house_type" />
+
+                <RadioGroup
+                    android:id="@+id/radio_groupHouseType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_12dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_houseType">
+
+                    <RadioButton
+                        android:id="@+id/btn_owned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="@dimen/margin_size_8dp"
+                        android:background="@drawable/yes_stroke"
+                        android:button="@null"
+                        android:fontFamily="@font/century_gothic_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/padding_size_16dp"
+                        android:text="@{viewModel.owned}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_020617"
+                        android:textSize="@dimen/text_size_14sp"
+                        tools:text="@string/owned" />
+
+                    <RadioButton
+                        android:id="@+id/btn_rental"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="@dimen/margin_size_8dp"
+                        android:background="@drawable/yes_stroke"
+                        android:button="@null"
+                        android:fontFamily="@font/century_gothic_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/padding_size_16dp"
+                        android:text="@{viewModel.rental}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_020617"
+                        android:textSize="@dimen/text_size_14sp"
+                        tools:text="@string/rental" />
+
+                    <RadioButton
+                        android:id="@+id/btn_companyProvided"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:background="@drawable/yes_stroke"
+                        android:button="@null"
+                        android:fontFamily="@font/century_gothic_bold"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:paddingHorizontal="@dimen/padding_size_16dp"
+                        android:text="@{viewModel.companyProvided}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_020617"
+                        android:textSize="@dimen/text_size_14sp"
+                        tools:text="@string/company_provided" />
+                </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/tv_residentialType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_24dp"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:lineSpacingExtra="@dimen/line_spacing_size_4dp"
+                    android:text="@{viewModel.residentialType}"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_FF000000"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/radio_groupHouseType"
+                    tools:text="@string/residential_type" />
+
+                <RadioGroup
+                    android:id="@+id/radio_groupResidentialType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_size_12dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_residentialType">
+
+                    <RadioButton
+                        android:id="@+id/btn_apartment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="@dimen/margin_size_8dp"
+                        android:background="@drawable/yes_stroke"
+                        android:button="@null"
+                        android:fontFamily="@font/century_gothic_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="16dp"
+                        android:text="@{viewModel.apartment}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_020617"
+                        android:textSize="@dimen/text_size_14sp"
+                        tools:text="@string/apartment" />
+
+                    <RadioButton
+                        android:id="@+id/btn_villa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginEnd="@dimen/margin_size_8dp"
+                        android:background="@drawable/yes_stroke"
+                        android:button="@null"
+                        android:fontFamily="@font/century_gothic_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/padding_size_16dp"
+                        android:text="@{viewModel.villa}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_020617"
+                        android:textSize="@dimen/text_size_14sp"
+                        tools:text="@string/villa" />
+
+                    <RadioButton
+                        android:id="@+id/btn_duplex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:background="@drawable/yes_stroke"
+                        android:button="@null"
+                        android:fontFamily="@font/century_gothic_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="16dp"
+                        android:text="@{viewModel.duplex}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_020617"
+                        android:textSize="@dimen/text_size_14sp"
+                        tools:text="@string/duplex" />
+                </RadioGroup>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_proceedNext"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="@dimen/margin_size_44dp"
+                    android:background="@drawable/ripple_theme_gradient_curve"
+                    android:fontFamily="@font/century_gothic_bold"
+                    android:gravity="center"
+                    android:text="@{viewModel.proceedNext}"
+                    tools:text="@string/proceed_next"
+                    android:textAllCaps="true"
+                    android:textColor="@color/color_FFFFFFFF"
+                    android:textSize="@dimen/text_size_14sp"
+                    app:backgroundTint="@null"
+                    app:icon="@drawable/ic_arrow_forward"
+                    app:iconGravity="textEnd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radio_groupResidentialType"
+                    app:rippleColor="?attr/colorControlHighlight" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
